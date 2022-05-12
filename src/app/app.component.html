@@ -1,0 +1,16 @@
+<h1>Reactive forms</h1>
+<form [formGroup]="newForm" (ngSubmit)="userForm()">
+  <input type="text" placeholder="First Name" formControlName="fname"><br>
+  <span style="color: red;" *ngIf="fname && fname.invalid && fname.touched">This fiels is invalid</span>
+  <br><br>
+  <input type="text" placeholder="Last Name" formControlName="lname"><br>
+  <br><br>
+  <input type="tel" placeholder="Mobile number" formControlName="mobNo"><br>
+  <br><br>
+  <input type="text" placeholder="Email Id" formControlName="email"><br>
+  <span style="color: red;" *ngIf="email && email.invalid && email.touched">This fiels is invalid</span><br>
+  <br><br>
+
+  <button [disabled]="newForm.invalid">Submit</button>
+
+</form>
